@@ -11,10 +11,15 @@ const MealItem: FC<TMealItemProps> = ({ meal }) => {
     <Link to={`/meal/${meal.idMeal}`}>
       <div
         key={meal.idMeal}
-        className="flex flex-col items-center justify-center bg-white rounded-lg border-2 border-gray-200 overflow-hidden"
+        className="flex flex-col items-center justify-center bg-white rounded-lg border-1 border-gray-200 overflow-hidden "
       >
         <img src={meal.strMealThumb} alt={meal.strMeal} />
-        <h2>{meal.strMeal}</h2>
+        <h6
+          className="text-center text-sm font-semibold p-2 truncate w-full"
+          title={meal.strMeal}
+        >
+          {meal.strMeal}
+        </h6>
       </div>
     </Link>
   );

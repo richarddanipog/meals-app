@@ -1,10 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
-import { getMeals, getMealById } from "../services/mealService";
+import {
+  getMeals,
+  getMealById,
+  getAlphabetMeals,
+} from "../services/mealService";
 
 export const useMealsAPI = (search: string) => {
   return useQuery({
     queryKey: ["meals", search], // Caches requests by search term
-    queryFn: () => getMeals(search),
+    queryFn: () => {
+      if (!search) {
+        return getAlphabetMeals(); // Get all meals when no search term
+      }
+      return getMeals(search); // Get filtered meals when search term exists
+    },
   });
 };
 
