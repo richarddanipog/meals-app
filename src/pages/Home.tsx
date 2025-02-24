@@ -1,9 +1,10 @@
-import Header from '../components/Header';
-import { useMealsAPI } from '../hooks/useMeals';
-import MealsList from '../components/MealsList';
-import { useSearchStore } from '../store/searchStore';
-import { useDebounce } from '../hooks/useDebounce';
-import { getSearchTerm } from '../store/selectors';
+import Header from "../components/Header";
+import { useMealsAPI } from "../hooks/useMeals";
+import MealsList from "../components/MealsList";
+import { useSearchStore } from "../store/searchStore";
+import { useDebounce } from "../hooks/useDebounce";
+import { getSearchTerm } from "../store/selectors";
+import Loader from "../components/common/Loader";
 
 const Home = () => {
   const searchTerm = useSearchStore(getSearchTerm);
@@ -15,7 +16,7 @@ const Home = () => {
     <div>
       <Header />
       {isLoading ? (
-        <div>Loading...</div>
+        <Loader />
       ) : error ? (
         <div>Error: {error.message}</div>
       ) : (

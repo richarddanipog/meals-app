@@ -2,7 +2,17 @@ type Nullable<T> = T | null;
 export type TMeal = {
   idMeal: string;
   strMeal: string;
+  strDrinkAlternate: Nullable<string>;
+  strCategory: string;
+  strArea: string;
+  strInstructions: string;
   strMealThumb: string;
+  strTags: Nullable<string>;
+  strYoutube: string;
+  strSource: string;
+  strImageSource: Nullable<string>;
+  strCreativeCommonsConfirmed: Nullable<string>;
+  dateModified: Nullable<string>;
 
   strIngredient1?: Nullable<string>;
   strIngredient2?: Nullable<string>;
@@ -19,6 +29,11 @@ export type TMeal = {
   strIngredient13?: Nullable<string>;
   strIngredient14?: Nullable<string>;
   strIngredient15?: Nullable<string>;
+  strIngredient16?: Nullable<string>;
+  strIngredient17?: Nullable<string>;
+  strIngredient18?: Nullable<string>;
+  strIngredient19?: Nullable<string>;
+  strIngredient20?: Nullable<string>;
 
   strMeasure1?: Nullable<string>;
   strMeasure2?: Nullable<string>;
@@ -35,4 +50,9 @@ export type TMeal = {
   strMeasure13?: Nullable<string>;
   strMeasure14?: Nullable<string>;
   strMeasure15?: Nullable<string>;
+  strMeasure16?: Nullable<string>;
+  strMeasure17?: Nullable<string>;
+  strMeasure18?: Nullable<string>;
+  strMeasure19?: Nullable<string>;
+  strMeasure20?: Nullable<string>;
 };
