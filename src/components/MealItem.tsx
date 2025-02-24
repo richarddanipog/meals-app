@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo, useState } from "react";
 import { TMeal } from "../types/meals";
 import { Link } from "react-router-dom";
 
@@ -7,22 +7,29 @@ type TMealItemProps = {
 };
 
 const MealItem: FC<TMealItemProps> = ({ meal }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <Link to={`/meal/${meal.idMeal}`}>
-      <div
-        key={meal.idMeal}
-        className="flex flex-col items-center justify-center bg-white rounded-lg border-1 border-gray-200 overflow-hidden "
-      >
-        <img src={meal.strMealThumb} alt={meal.strMeal} />
-        <h6
-          className="text-center text-sm font-semibold p-2 truncate w-full"
-          title={meal.strMeal}
-        >
-          {meal.strMeal}
-        </h6>
+      <div className="relative">
+        <img
+          src={meal.strMealThumb}
+          alt={meal.strMeal}
+          loading="lazy"
+          onLoad={() => setImageLoaded(true)}
+          className={`transition-opacity duration-300 ${
+            imageLoaded ? "opacity-100" : "opacity-0"
+          }`}
+        />
+        {!imageLoaded && (
+          <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+        )}
       </div>
+      <h6 className="text-center text-sm font-semibold p-2 truncate w-full">
+        {meal.strMeal}
+      </h6>
     </Link>
   );
 };
 
-export default MealItem;
+export default memo(MealItem);
