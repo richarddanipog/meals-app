@@ -1,9 +1,13 @@
-import { useSearchStore } from "../store/searchStore";
-import { getSearchTerm, getSetSearchTerm } from "../store/selectors";
+import { useSearchStore } from '../store/searchStore';
+import { getSearchTerm, getSetSearchTerm } from '../store/selectors';
 
 const Header = () => {
   const searchTerm = useSearchStore(getSearchTerm);
   const setSearchTerm = useSearchStore(getSetSearchTerm);
+
+  const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
 
   return (
     <div className="bg-blue-50 p-4 md:p-6 flex flex-col md:flex-row items-center justify-between shadow-md gap-4 md:gap-0">
@@ -14,7 +18,7 @@ const Header = () => {
         <input
           type="text"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={onChangeInput}
           placeholder="Search meals..."
           className="w-full sm:w-80 px-4 md:px-6 py-2 md:py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm hover:shadow-md transition-all placeholder-gray-400"
         />

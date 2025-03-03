@@ -1,4 +1,5 @@
 type Nullable<T> = T | null;
+
 export type TMeal = {
   idMeal: string;
   strMeal: string;

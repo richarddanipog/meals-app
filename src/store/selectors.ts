@@ -1,6 +1,6 @@
-import { SearchState } from "./searchStore";
+import { ISearchState } from './types';
 
-const getSearchTerm = (state: SearchState) => state.searchTerm;
-const getSetSearchTerm = (state: SearchState) => state.setSearchTerm;
+const getSearchTerm = (state: ISearchState) => state.searchTerm;
+const getSetSearchTerm = (state: ISearchState) => state.setSearchTerm;
 
 export { getSearchTerm, getSetSearchTerm };

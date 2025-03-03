@@ -1,6 +1,6 @@
-import { FC, memo, useState } from "react";
-import { TMeal } from "../types/meals";
-import { Link } from "react-router-dom";
+import { FC, memo, useState } from 'react';
+import { TMeal } from '../types/meals';
+import { Link } from 'react-router-dom';
 
 type TMealItemProps = {
   meal: TMeal;
@@ -17,8 +17,8 @@ const MealItem: FC<TMealItemProps> = ({ meal }) => {
           alt={meal.strMeal}
           loading="lazy"
           onLoad={() => setImageLoaded(true)}
-          className={`transition-opacity duration-300 ${
-            imageLoaded ? "opacity-100" : "opacity-0"
+          className={`rounded-lg transition-opacity duration-300 ${
+            imageLoaded ? 'opacity-100' : 'opacity-0'
           }`}
         />
         {!imageLoaded && (

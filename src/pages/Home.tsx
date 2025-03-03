@@ -1,12 +1,12 @@
-import Header from "../components/Header";
-import { useMealsAPI } from "../hooks/useMeals";
-import MealsList from "../components/MealsList";
-import { useSearchStore } from "../store/searchStore";
-import { useDebounce } from "../hooks/useDebounce";
-import { getSearchTerm } from "../store/selectors";
-import Loader from "../components/common/Loader";
-import { usePagination } from "../hooks/usePagination";
-import { TMeal } from "../types/meals";
+import Header from '../components/Header';
+import { useMealsAPI } from '../hooks/useMeals';
+import MealsList from '../components/MealsList';
+import { useSearchStore } from '../store/searchStore';
+import { useDebounce } from '../hooks/useDebounce';
+import { getSearchTerm } from '../store/selectors';
+import Loader from '../components/common/Loader';
+import { usePagination } from '../hooks/usePagination';
+import { TMeal } from '../types/meals';
 
 const Home = () => {
   const searchTerm = useSearchStore(getSearchTerm);
@@ -24,7 +24,6 @@ const Home = () => {
     hasPreviousPage,
   } = usePagination<TMeal>({
     items: meals || [],
-    itemsPerPage: 24,
   });
 
   return (

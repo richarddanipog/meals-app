@@ -1,11 +1,11 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect } from 'react';
 
-interface PaginationProps<T> {
+interface IPaginationProps<T> {
   items: T[];
-  itemsPerPage: number;
+  itemsPerPage?: number;
 }
 
-interface UsePaginationReturn<T> {
+interface IUsePaginationReturn<T> {
   currentPage: number;
   totalPages: number;
   currentItems: T[];
@@ -18,8 +18,8 @@ interface UsePaginationReturn<T> {
 
 export function usePagination<T>({
   items,
-  itemsPerPage,
-}: PaginationProps<T>): UsePaginationReturn<T> {
+  itemsPerPage = 24,
+}: IPaginationProps<T>): IUsePaginationReturn<T> {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {

@@ -1,11 +1,7 @@
 import { create } from 'zustand';
+import { ISearchState } from './types';
 
-export interface SearchState {
-  searchTerm: string;
-  setSearchTerm: (term: string) => void;
-}
-
-export const useSearchStore = create<SearchState>((set) => ({
+export const useSearchStore = create<ISearchState>((set) => ({
   searchTerm: '',
   setSearchTerm: (term) => set({ searchTerm: term }),
 }));
