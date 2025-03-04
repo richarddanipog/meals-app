@@ -1,10 +1,10 @@
-import { FC, useMemo } from "react";
-import { TMeal } from "../types/meals";
-import { Link, useParams } from "react-router-dom";
-import { useMealByIdAPI } from "../hooks/useMeals";
-import IngredientsList from "../components/IngredientsList";
-import MealLink from "../components/MealLink";
-import Loader from "../components/common/Loader";
+import { FC, useMemo } from 'react';
+import { TMeal } from '../types/meals';
+import { Link, useParams } from 'react-router-dom';
+import { useMealByIdAPI } from '../hooks/useMeals';
+import IngredientsList from '../components/IngredientsList';
+import MealLink from '../components/MealLink';
+import Loader from '../components/common/Loader';
 
 const MealDetail: FC = () => {
   const { id } = useParams();
@@ -47,7 +47,7 @@ const MealDetail: FC = () => {
             <div>
               <h1 className="text-3xl font-bold mb-4">{meal?.strMeal}</h1>
               <div className="mb-4">
-                <span className="font-semibold">Category:</span>{" "}
+                <span className="font-semibold">Category:</span>{' '}
                 {meal?.strCategory}
               </div>
               <div className="mb-4">

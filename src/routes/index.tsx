@@ -1,6 +1,7 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "../pages/Home";
-import MealDetail from "../pages/MealDetail";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from '../pages/Home';
+import MealDetail from '../pages/MealDetail';
+import AddMealForm from '../pages/AddMealForm';
 
 const AppRoutes = () => {
   return (
@@ -8,6 +9,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/meal/:id" element={<MealDetail />} />
+        <Route path="/add-meal" element={<AddMealForm />} />
       </Routes>
     </BrowserRouter>
   );
