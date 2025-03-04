@@ -1,5 +1,6 @@
 type Nullable = string | null;
 
+// this is the type of meal that we get from the API
 export type TMeal = {
   idMeal: string;
   strMeal: string;

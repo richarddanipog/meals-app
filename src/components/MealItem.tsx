@@ -1,4 +1,4 @@
-import { FC, memo, useState } from 'react';
+import { FC, useState } from 'react';
 import { TMeal } from '../types/meals';
 import { Link } from 'react-router-dom';
 
@@ -32,4 +32,4 @@ const MealItem: FC<TMealItemProps> = ({ meal }) => {
   );
 };
 
-export default memo(MealItem);
+export default MealItem;

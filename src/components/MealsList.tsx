@@ -1,6 +1,6 @@
-import { FC, memo } from "react";
-import { TMeal } from "../types/meals";
-import MealItem from "./MealItem";
+import { FC } from 'react';
+import { TMeal } from '../types/meals';
+import MealItem from './MealItem';
 
 interface MealsListProps {
   meals: TMeal[];
@@ -17,4 +17,4 @@ const MealsList: FC<MealsListProps> = ({ meals }) => {
   );
 };
 
-export default memo(MealsList);
+export default MealsList;
